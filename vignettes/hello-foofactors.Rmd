@@ -1,42 +1,24 @@
 ---
-title: "Intro to foofactors"
-author: "Jenny Bryan"
+title: "HW08: continue developing foofactors"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Intro to foofactors}
+  %\VignetteIndexEntry{HW08: continue developing foofactors}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-Throwing stuff from the README in here!
+This is my Stat 547M HW08, continuing where Jenny left off on the package `foofactors`.
+
+The first function added is the `detect_fac` function that detects a list of factors that should be characters when the number of unique levels is equal to the length of the list. When the above scenario happens, `detect_fac()` will convert the list from a list of factors to a list of characters; if there are some levels that appear more than once, then we do nothing to this list.
 
 ```{r}
-#install_github("STAT545/foofactors")
+#install_github("MingWan10/foofactors")
 library(foofactors)
 fbind(iris$Species[c(1, 51, 101)], PlantGrowth$group[c(1, 11, 21)])
 freq_out(iris$Species)
+detect_fac(factor(c("a", "b", "c")))
 ```
-
-Boilerplate content below ...
-
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
-
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
-
-## Vignette Info
-
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
 
 ## Figures
 
