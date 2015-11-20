@@ -14,17 +14,15 @@ knitr::opts_chunk$set(
 )
 ```
 
-This is a practice package for [STAT 545](http://stat545-ubc.github.io).
+This is my Stat 547M HW08, continuing where Jenny left off on the package `foofactors`.
 
-This is just the demo Jenny is posting for students to consult / start with for their homework.
-
-Here's how to use the `foofactors` package.
-
+The first function added is the `detect_fac` function that detects a list of factors that should be characters when the number of unique levels is equal to the length of the list. When the above scenario happens, `detect_fac()` will convert the list from a list of factors to a list of characters; if there are some levels that appear more than once, then we do nothing to this list.
 
 ```{r}
-#install_github("STAT545/foofactors")
+# install_github("MingWan10/foofactors")
 library(foofactors)
 fbind(iris$Species[c(1, 51, 101)], PlantGrowth$group[c(1, 11, 21)])
 freq_out(iris$Species)
+detect_fac(factor(c("a", "b", "c")))
 ```
 
