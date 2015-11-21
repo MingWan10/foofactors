@@ -13,39 +13,11 @@ This is my Stat 547M HW08, continuing where Jenny left off on the package `foofa
 The first function added is the `detect_fac` function that detects a list of factors that should be characters when the number of unique levels is equal to the length of the list. When the above scenario happens, `detect_fac()` will convert the list from a list of factors to a list of characters; if there are some levels that appear more than once, then we do nothing to this list.
 
 ```{r}
-#install_github("MingWan10/foofactors")
+# To install the package:
+# install_github("MingWan10/foofactors")
+
 library(foofactors)
-fbind(iris$Species[c(1, 51, 101)], PlantGrowth$group[c(1, 11, 21)])
-freq_out(iris$Species)
-detect_fac(factor(c("a", "b", "c")))
+browseVignettes("foofactors")
+(detect_fac(factor(c("a", "b", "c"))))
 ```
 
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
-```
-
-You can enable figure captions by `fig_caption: yes` in YAML:
-
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
-```
-
-Also a quote using `>`:
-
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
